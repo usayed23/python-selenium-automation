@@ -25,3 +25,5 @@ Result_amazon = driver.find_element(By.XPATH, "//h1[contains(text(),'Cancel Item
 if "Cancel Items or Orders" == Result_amazon:
 
     print("Test case passed")
+else:
+    print("Test case failed")
