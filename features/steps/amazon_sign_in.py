@@ -2,7 +2,7 @@ from behave import given, when, then
 from selenium.webdriver.common.by import By
 
 
-@given('Open the Amazon page')
+@given(' Open The a Amazon page')
 def open_amazon(context):
     context.driver.get('https://www.amazon.com/')
 

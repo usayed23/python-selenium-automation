@@ -3,7 +3,7 @@ Feature: Test for Amazon Sign In
   # Enter feature description here
 
   Scenario:  Logged out user sees Sign in page when clicking Orders
-     Given Open the Amazon page
+     Given Open The a Amazon page
      When Click on Amazon Sign In
      Then Verify Sign In page
 
