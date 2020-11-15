@@ -3,6 +3,12 @@ from behave import given, when, then
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
+FIRST_LINK = By.CSS_SELECTOR, "li.zg_selected"
+SECOND_LINK = By.XPATH, "//a[text()='New Releases']"
+THIRD_LINK = By.XPATH,"//a[text()='Movers & Shakers']"
+FOURTH_LINK = By.XPATH,"//a[text()='Most Wished For']"
+FIFTH_LINK = By.XPATH,"//a[text()='Gift Ideas']"
+
 
 @given("Open Amazon Best Seller")
 def amazon_bestseller(context):
@@ -13,27 +19,27 @@ def amazon_bestseller(context):
 @then("Verify all links")
 def click_on_link(context):
 
-    first_link = context.driver.find_element(By.CSS_SELECTOR, "li.zg_selected")
+    first_link = context.driver.find_element(*FIRST_LINK)
     first_link.click()
     context.driver.back()
     sleep(4)
 
-    second_link = context.driver.find_elements(By.XPATH, "//a[text()='New Releases']")[1]
+    second_link = context.driver.find_elements(*SECOND_LINK)[1]
     second_link.click()
     context.driver.back()
     sleep(4)
 
-    third_link = context.driver.find_element(By.XPATH,"//a[text()='Movers & Shakers']")
+    third_link = context.driver.find_element(*THIRD_LINK)
     third_link.click()
     context.driver.back()
     sleep(4)
 
-    fourth_link = context.driver.find_element(By.XPATH,"//a[text()='Most Wished For']")
+    fourth_link = context.driver.find_element(*FOURTH_LINK)
     fourth_link.click()
     context.driver.back()
     sleep(4)
 
-    fifth_link = context.driver.find_element(By.XPATH,"//a[text()='Gift Ideas']")
+    fifth_link = context.driver.find_element(*FIFTH_LINK)
     fifth_link.click()
     context.driver.back()
     sleep(4)

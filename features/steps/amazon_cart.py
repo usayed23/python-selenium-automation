@@ -6,13 +6,12 @@ VERIFY_CART = (By.XPATH,"//h2[contains(text(),'Your Amazon Cart is empty')]")
 
 @given('Open the Amazon page')
 def open_amazon(context):
-    context.driver.get('https://www.amazon.com/')
+    context.app.main_page.open_amazon()
 
 @when("Click on the cart icon")
 def click_cart(context):
-    context.driver.find_element(*CLICK_CART).click()
+    context.app.main_page.click_on_the_cart_icon()
 
 @then("Verify cart is empty")
 def verify_cart(context):
-    result_cart = context.driver.find_element(*VERIFY_CART).text
-    assert result_cart =="Your Amazon Cart is empty", f'Expected Your Amazon Cart is empty, but got {result_cart}'
+    context.app.cart_page.verifyCart()
